@@ -33,6 +33,8 @@
 
 建议编译顺序：xelatex->bibtex->xelatex->xelatex
 
+如果你使用VScode编译，那么.vscode文件夹里已经做好配置
+
 ## 论文写作指南
 
 ### 论文封面
