@@ -1,0 +1,186 @@
+﻿\documentclass{NCEPU-thesis}
+
+\title{中文标题}{English Title}
+\author{张三}
+\advisor{李四}
+\school{数理系}
+\major{数据科学与大数据技术}
+\studentnumber{220221100000}
+\adminclass{数科2201班}
+\submitdate{二〇二六年六月}
+
+
+\begin{document}
+
+% 封面
+\makecover
+
+\begin{chineseabstract}
+
+中文摘要
+
+\chinesekeyword{中文；关键词}
+
+\end{chineseabstract}
+
+\begin{englishabstract}
+
+English Abstract
+
+\englishkeyword{English; Keywords}
+
+\end{englishabstract}
+
+% 目录
+\thesistableofcontents
+
+% 正文
+\chapter{绪论}
+
+\section{研究工作的背景与意义}
+
+\begin{enumerate}
+    \item 研究工作的背景与意义
+    \item 研究工作的背景与意义
+    \item 研究工作的背景与意义
+    \item 研究工作的背景与意义
+\end{enumerate}
+
+这是引用文献\cite{bahdanau2015neural}的示例。
+
+这是引用文献\citing{bahdanau2015neural}右上标的示例。
+
+研究工作的背景与意义
+
+这是引用图片\ref{fig:01}的示例。
+\begin{figure}[h]
+	\includegraphics[width=13cm]{prediction_sample_10.png}
+	\caption{示意图}
+	\label{fig:01}
+\end{figure}
+
+这是一个复杂公式\ref{eq:01}示例
+
+\begin{equation}
+    \begin{aligned}
+        \iint\limits_{\tau}
+        P \mathrm{d}x
+        &+Q\mathrm{d}y
+        +R\mathrm{d}z
+        =\ \oint\limits_{\Sigma}
+        \left(
+            \dfrac{\partial R}{\partial_{y}}
+            -\dfrac{\partial Q}{\partial_{z}}
+        \right)\mathrm{d}y\mathrm{d}z\\
+        &+\left(
+            \dfrac{\partial P}{\partial_{z}}
+            -\dfrac{\partial R}{\partial_{x}}
+        \right)\mathrm{d}z\mathrm{d}z
+        +\left(
+            \dfrac{\partial Q}{\partial_{x}}
+            -\dfrac{\partial P}{\partial_{y}}
+        \right)\mathrm{d}x\mathrm{d}y
+    \end{aligned}
+\label{eq:01}
+\end{equation}
+
+% 下面的图放不下，新开一页
+\clearpage
+
+训练流程如算法\ref{alg:binary_search}所示。
+\begin{algorithm}[ht]
+\caption{二分查找算法}
+\label{alg:binary_search}
+\KwIn{升序数组 $A[1..n]$，目标值 $x$}
+\KwOut{目标下标（不存在则返回 $-1$）}
+$l \leftarrow 1,\ r \leftarrow n$\;
+\While{$l \le r$}{
+    $mid \leftarrow \lfloor (l+r)/2 \rfloor$\;
+    \uIf{$A[mid] = x$}{
+        \Return $mid$\;
+    }
+    \uElseIf{$A[mid] < x$}{
+        $l \leftarrow mid + 1$\;
+    }
+    \Else{
+        $r \leftarrow mid - 1$\;
+    }
+}
+\Return $-1$\;
+\end{algorithm}
+
+
+这是一个整体实验框架示例，如图\ref{fig:ml_pipeline}所示。
+\begin{figure}[ht]
+\centering
+\fbox{
+\begin{minipage}{0.92\textwidth}
+\centering
+\vspace{6pt}
+原始业务数据采集
+$\rightarrow$
+数据清洗与缺失值处理
+$\rightarrow$
+特征工程与特征筛选
+$\rightarrow$
+候选模型训练
+$\rightarrow$
+验证集调参与模型选择
+$\rightarrow$
+最优模型重训练
+$\rightarrow$
+测试集评估
+$\rightarrow$
+模型部署与在线监控
+\vspace{6pt}
+
+\bigskip
+关键评估与监控：MAE / RMSE / $R^2$ / 数据漂移 / 误差漂移
+\end{minipage}
+}
+\caption{机器学习建模与部署流程}
+\label{fig:ml_pipeline}
+\end{figure}
+
+\section{研究历史与现状}
+
+\subsection{三级标题}
+
+\subsubsection{四级标题}
+
+\section{本章小结}
+
+\chapter{一级标题1}
+
+\chapter{一级标题a}
+
+\section{总体实现框架}
+
+\section{本章小结}
+
+\chapter{一级标题2}
+
+\section{实验目的}
+
+% 加入目录，但是不加入章节标题（也就是去除第X章）
+\chapter*{全文总结与展望}
+\addcontentsline{toc}{chapter}{全文总结与展望}
+\markboth{全文总结与展望}{全文总结与展望}
+
+\section{全文总结}
+
+\nocite{*}
+% 参考文献
+\bibliography{Reference/reference}
+
+
+% 附录
+\thesissingleappendix
+\section{补充材料}
+
+% 致谢
+\thesisacknowledgement
+
+听我说谢谢你
+
+\end{document}
