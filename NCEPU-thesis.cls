@@ -278,8 +278,8 @@
 \newcommand{\englishkeyword}[1]{
   \vspace{0.5\baselineskip}
   \noindent
-  \makebox[2.5cm][l]{\fontsize{14.05pt}{15pt}\selectfont Keywords:}
-  \parbox[t]{\linewidth - 2.6cm}{\fontsize{12.05pt}{12.05pt}\selectfont #1}
+  \makebox[3.2cm][l]{\fontsize{12pt}{15pt}\selectfont\bfseries KEY WORDS:}
+  \parbox[t]{\linewidth - 3.3cm}{\fontsize{12.05pt}{12.05pt}\selectfont #1}
 }
 
 \tocloftpagestyle{fancy}
@@ -578,18 +578,20 @@
 \thispagestyle{plain}%
 \global\@topnum\z@
 \@afterindentfalse
-{\centering
-\fontsize{24.1pt}{24.1pt}\heiti\selectfont
-\zh@thetitle\\[25pt]}
+% 学校模板要求中英文摘要页上方不显示论文题目，保留原代码以便需要时恢复。
+% {\centering
+% \fontsize{24.1pt}{24.1pt}\heiti\selectfont
+% \zh@thetitle\\[25pt]}
 \secdef\@chapter\@schapter}
 
 \newcommand\chapterb{\clearpage
 \thispagestyle{plain}%
 \global\@topnum\z@
 \@afterindentfalse
-{\centering
-\fontsize{24.1pt}{20pt}\selectfont
-\en@thetitle\\[20pt]}
+% 学校模板要求中英文摘要页上方不显示论文题目，保留原代码以便需要时恢复。
+% {\centering
+% \fontsize{24.1pt}{20pt}\selectfont
+% \en@thetitle\\[20pt]}
 \secdef\@chapter\@schapter}
 
 \newcommand{\bindpdfcover}[1]{
